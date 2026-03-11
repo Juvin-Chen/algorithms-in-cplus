@@ -28,6 +28,7 @@ int main() {
         }
         case 2: {
             cin >> str >> num;
+            // 短路
             if (m.find(str) == m.end() || m[str] < num) { // 不存在 / 数量不足
                 cout << -1 << endl;
                 continue;

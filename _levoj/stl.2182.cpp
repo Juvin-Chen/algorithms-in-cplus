@@ -18,6 +18,7 @@ int main() {
     int q_num;
     cin >> q_num;
     char op, x;
+
     // 初始迭代器的位置，也就是初始光标的位置
     auto it = L.begin();
     while (q_num--) {
