@@ -17,11 +17,11 @@ int main() {
 
     // dp[i] 表示走到 i 位置时最少的水坑数量
     vector<int> dp(n + 1, 0);
-    dp[1] = is_water[1] == 0 ? 0 : 1;
-    for (int i = 1; i <= n; i++) {
-        int min = dp[i - 1] + is_water[i];
-        for (int j = ; j < i; j++) {
-            if ()
+    dp[1] = is_water[1] ? 1 : 0;
+    for (int i = 2; i <= n; i++) {
+        dp[i] = is_water[i] + dp[i - 1];
+        for (int j = max(1, i - k); j < i; j++) {
+            dp[i] = dp[j] + is_water[i] < dp[i] ? dp[j] + is_water[i] : dp[i];
         }
     }
     cout << dp[n];
